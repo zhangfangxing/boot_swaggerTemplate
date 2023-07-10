@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: boot_jshell
+  servlet:
+    context-path: /boot_jshell
+swagger:
+  enable: true
+  base:
+    package: org.zfx
+  contact:
+    email: zhang_fangxing@163.com
+    name: zhang_fangxing
+    url: https://none
+  description:
+  title: 代码管理平台 API document
+  url: https://none
+  version: v0.1
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true

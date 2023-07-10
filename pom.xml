@@ -8,9 +8,94 @@
     <artifactId>boot_jshell</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>3.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>3.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.19</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jgit</groupId>
+            <artifactId>org.eclipse.jgit</artifactId>
+            <version>4.4.1.201607150455-r</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jgit</groupId>
+            <artifactId>org.eclipse.jgit.archive</artifactId>
+            <version>5.8.1.202007141445-r</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
+    <!-- <build > 主要用于编译设置 -->
+    <build>
+        <!-- 定义打包成jar的名字 -->
+        <!-- 这里如果不定义 , 打包成的jar名字格式为 : <artifactId> + <version> -->
+        <finalName>boot_jgit</finalName>
+        <plugins>
+            <!--SpringBoot maven插件-->
+            <!-- 可以将应用打成一个可执行的jar包 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- 设置启动入口 -->
+                <!-- manClass即使不配置 , SprinBoot也在打包的时候也清楚入口是哪个 , 其实不用配置 -->
+                <configuration>
+                    <mainClass>org.zfx.ApplicationMain</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
